@@ -2,11 +2,10 @@
 import express from 'express';
 const app = express();
 // Importar dotenv
-import { resolve } from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 //importar __dirname
-import { dirname } from 'path';
+import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -15,7 +14,7 @@ import { dbConnection } from './database/config.js';
 dbConnection();
 
 // Lectura y parseo del Body
-app.use(express.json);
+app.use(express.json());
 
 // Node Server
 import { createServer } from "http";
